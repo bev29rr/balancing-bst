@@ -1,2 +1,4 @@
-# balancing-bst
-Balancing Binary Search Tree using Typescript
+# Balancing BST 
+
+## Description
+A simple visualisation of balancing binary search trees

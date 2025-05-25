@@ -1,0 +1,60 @@
+:root {
+    --black: #333;
+    --main: #79ff79;
+    --main-red: #ff7979;
+    background-color: var(--black);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 50px;
+    color: white;
+}
+
+h1 {
+    color: var(--main);
+    text-align: center;
+    font-size: 44px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 12px;
+    margin: 15px;
+    color: var(--black);
+    background-color: white;
+}
+
+button.add {
+    background-color: var(--main);
+}
+
+button.delete {
+    background-color: var(--main-red);
+}
+
+input.array {
+    width: 10%;
+    padding: 3px;
+}
