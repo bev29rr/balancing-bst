@@ -12,10 +12,11 @@ const ArraySplit: React.FC<Props> = ({ inputs }) => {
     const AnimateMiddleItem = () => {
         const middle = document.getElementById("middleItem");
         if (middle && !animateState) {
-            middle.style.backgroundColor = "var(--main)";
-            middle.style.transition = "transform 0.5s ease";
+            middle.style.transition = "background 0.3s ease, transform 0.3s ease, margin 0.3s ease";
+            middle.style.margin = "20px";
 
             setTimeout(() => {
+                middle.style.backgroundColor = "var(--main)";
                 middle.style.transform = "translateY(30px)";
                 setAnimateState(true);
             }, 300);
@@ -25,11 +26,11 @@ const ArraySplit: React.FC<Props> = ({ inputs }) => {
     const resetAnimation = () => {
         const middle = document.getElementById("middleItem");
         if (middle && animateState) {
-            middle.style.backgroundColor = "white";
-            middle.style.transition = "transform 0.5s ease";
-
+            
             setTimeout(() => {
+                middle.style.backgroundColor = "white";
                 middle.style.transform = "translateY(0px)";
+                middle.style.margin = "6px";
                 setAnimateState(false);
             }, 300);
         }
