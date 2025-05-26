@@ -28,7 +28,7 @@ const ArrayCreate: React.FC<Props> = ({ inputs, setInputs })  => {
                 <button onClick={addInput} className="add">Add item</button>
                 <button onClick={deleteInput} className="delete">Delete item</button>
             </div>
-            <div className="array-container">
+            <div className="array-container" style={{ marginBottom: "25px" }}>
                 {inputs.map((value, index) => (
                     <input
                     key={index}

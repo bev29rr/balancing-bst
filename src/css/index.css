@@ -34,7 +34,14 @@ p.sub {
     margin: 0;
     margin-bottom: 10px;
     font-size: 18px;
+}
+
+.sub.warn {
     color: var(--main-red);
+}
+
+.sub.ok {
+    color: var(--main);
 }
 
 .centered {

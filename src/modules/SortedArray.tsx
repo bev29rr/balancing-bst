@@ -29,4 +29,4 @@ const SortedArray: React.FC<Props> = ({ inputs }) => {
     );
 };
 
-export default SortedArray
+export default SortedArray;
