@@ -4,8 +4,17 @@ import ArrayCreate from './modules/Array';
 import type { Node } from './modules/BSTCreation';
 import BSTCreation, { buildBST } from './modules/BSTCreation';
 import { BSTVisual } from './modules/BSTVisual';
+import SortedArray from './modules/SortedArray';
 
 const removeDuplicates = (arr: string[]): string[] => [...new Set(arr)];
+
+export function cleanupInput(arr: string[]): string[] {
+  return removeDuplicates(
+    arr
+    .map((val, _) => val.trim())
+    .filter(val => val !== '')
+  )
+} 
 
 const App: React.FC = () => {
   const [inputs, setInputs] = useState<string[]>([]);
@@ -18,11 +27,7 @@ const App: React.FC = () => {
 
   const buildBSTFromInputs = (arr: string[]): Node[] => {
     return buildBST(
-      removeDuplicates(
-        arr
-          .map((val, _) => val.trim())
-          .filter(val => val !== '')
-      )
+      cleanupInput(arr)
     );
   };
 
@@ -46,8 +51,12 @@ const App: React.FC = () => {
         </p>
         <BSTVisual nodes={table}></BSTVisual>
         <p>
-          <span style={{ color: 'var(--main)' }}>3.</span> The next step is to prepare for the balancing
+          <span style={{ color: 'var(--main)' }}>3.</span> The next step is to prepare for the balancing.
         </p>
+        <p>
+          We need to a sorted array, so an <span style={{ color: 'var(--main)' }}>inorder</span> traversal is necessary 
+        </p>
+        <SortedArray inputs={inputs}></SortedArray>
       </div>
     </>
   );

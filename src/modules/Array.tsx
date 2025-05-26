@@ -33,7 +33,7 @@ const ArrayCreate: React.FC<Props> = ({ inputs, setInputs })  => {
                     <input
                     key={index}
                     type="text"
-                    className="array"
+                    className="array enabled"
                     placeholder={`Item ${index + 1}`}
                     value={value}
                     onChange={(e) => handleChange(index, e.target.value)}
