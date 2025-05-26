@@ -53,6 +53,12 @@ p.sub {
     margin: 0 140px 30px 140px;
 }
 
+@media (max-width: 768px) {
+    .centered {
+        margin: 10px;
+    }
+}
+
 button {
     border: none;
     border-radius: var(--border-radius);
