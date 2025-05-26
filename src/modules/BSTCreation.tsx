@@ -57,7 +57,7 @@ type Props = {
     setTable: React.Dispatch<React.SetStateAction<Node[]>>;
 };
 
-const BSTCreation: React.FC<Props> = ({ table, setTable }) => {
+const BSTCreation: React.FC<Props> = ({ table }) => {
     return (
         <>
             <table cellPadding="5" style={{ marginTop: '1rem' }}>
