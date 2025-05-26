@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Array.css';
 
 type Props = {
   inputs: string[];
@@ -27,7 +28,7 @@ const ArrayCreate: React.FC<Props> = ({ inputs, setInputs })  => {
                 <button onClick={addInput} className="add">Add item</button>
                 <button onClick={deleteInput} className="delete">Delete item</button>
             </div>
-            <p>
+            <div className="array-container">
                 {inputs.map((value, index) => (
                     <input
                     key={index}
@@ -43,7 +44,7 @@ const ArrayCreate: React.FC<Props> = ({ inputs, setInputs })  => {
                     }}
                     />
                 ))}
-            </p>
+            </div>
         </>
     );
 };

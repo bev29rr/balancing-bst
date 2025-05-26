@@ -45,16 +45,3 @@ button {
     color: var(--black);
     background-color: white;
 }
-
-button.add {
-    background-color: var(--main);
-}
-
-button.delete {
-    background-color: var(--main-red);
-}
-
-input.array {
-    width: 10%;
-    padding: 3px;
-}

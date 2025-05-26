@@ -12,6 +12,9 @@ const App: React.FC = () => {
           <span style={{ color: 'var(--main)' }}>1.</span> To create a Balanced BST, we need to start with a list/array first
         </p>
         <ArrayCreate inputs={inputs} setInputs={setInputs}></ArrayCreate>
+        <p>
+          <span style={{ color: 'var(--main)' }}>1.</span> To create a Balanced BST, we need to start with a list/array first
+        </p>
       </div>
     </>
   );

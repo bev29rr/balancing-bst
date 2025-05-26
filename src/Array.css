@@ -1,0 +1,17 @@
+button.add {
+    background-color: var(--main);
+}
+
+button.delete {
+    background-color: var(--main-red);
+}
+
+.array-container {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+input.array {
+    width: 10%;
+    padding: 3px;
+}
