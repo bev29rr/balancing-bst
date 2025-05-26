@@ -3,17 +3,24 @@ import '../css/Tree.css';
 
 import type { TreeNode } from "./BSTCreation";
 
-const buildVisualTree = (nodes: Node[]): TreeNode | null => {
-    const build = (index: number): TreeNode | null => {
-        if (index === -1) return null;
-            const { key, left, right } = nodes[index];
+const buildVisualTree = (nodes: Node[], rootIndex: number = 0): TreeNode | null => {
+    const build = (index: number, visited = new Set<number>()): TreeNode | null => {
+        if (index === -1 || index < 0 || index >= nodes.length) return null;
+        if (visited.has(index)) {
+            // failsafe to prevent crashes
+            console.warn(`Detected cycle or re-visiting node at index ${index}`);
+            return null;
+        }
+        visited.add(index);
+
+        const { key, left, right } = nodes[index];
         return {
             key,
-            left: build(left),
-            right: build(right),
+            left: build(left, visited),
+            right: build(right, visited),
         };
     };
-    return nodes.length > 0 ? build(0) : null;
+    return nodes.length > 0 ? build(rootIndex) : null;
 };
 
 const TreeNodeView = ({ node }: { node: TreeNode | null }) => {
@@ -34,7 +41,7 @@ const TreeNodeView = ({ node }: { node: TreeNode | null }) => {
     );
 };
 
-export const BSTVisual = ({ nodes }: { nodes: Node[] }) => {
-    const root = buildVisualTree(nodes);
+export const BSTVisual = ({ nodes, rootIndex = 0 }: { nodes: Node[], rootIndex?: number }) => {
+    const root = buildVisualTree(nodes, rootIndex);
     return <TreeNodeView node={root} />;
 };

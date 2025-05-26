@@ -10,7 +10,7 @@ import { BSTBalance } from './modules/BalancingBST';
 
 const removeDuplicates = (arr: string[]): string[] => [...new Set(arr)];
 
-export function cleanupInput(arr: string[]): string[] {
+export const cleanupInput =  (arr: string[]): string[] => {
   return removeDuplicates(
     arr
     .map((val, _) => val.trim())
@@ -22,16 +22,19 @@ const App: React.FC = () => {
   const [inputs, setInputs] = useState<string[]>([]);
   const [table, setTable] = useState<Node[]>([]);
   const [cleanBST, setCleanBST] = useState<Node[]>([]);
+  const [cleanRootIndex, setCleanRootIndex] = useState(0);
 
   useEffect(() => {
     const newTable = buildBSTFromInputs(inputs);
     setTable(newTable);
 
-    const indexInputs: [number, string][] = inputs.map((value, i) => [i, value]);
+    const indexInputs: [number, string][] = cleanupInput(inputs).map((value, i) => [i, value]);
     const newBST = BSTBalance(indexInputs);
     if (newBST) {
       setCleanBST(newBST[0]);
+      setCleanRootIndex(newBST[1]);
     }
+
   }, [inputs]);
 
   const buildBSTFromInputs = (arr: string[]): Node[] => {
@@ -82,7 +85,7 @@ const App: React.FC = () => {
         <p>
           For the visual tree:
         </p>
-        <BSTVisual nodes={cleanBST}></BSTVisual>
+        <BSTVisual nodes={cleanBST} rootIndex={cleanRootIndex}></BSTVisual>
       </div>
       <footer>Like it? Check out my other projects at <a href="https://github.com/bev29rr" target="_blank">@bev29rr</a></footer>
     </>
