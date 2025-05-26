@@ -14,25 +14,19 @@ const ArraySplit: React.FC<Props> = ({ inputs }) => {
         if (middle && !animateState) {
             middle.style.transition = "background 0.3s ease, transform 0.3s ease, margin 0.3s ease";
             middle.style.margin = "20px";
-
-            setTimeout(() => {
-                middle.style.backgroundColor = "var(--main)";
-                middle.style.transform = "translateY(30px)";
-                setAnimateState(true);
-            }, 300);
+            middle.style.backgroundColor = "var(--main)";
+            middle.style.transform = "translateY(30px)";
+            setAnimateState(true);
         }
     };
 
     const resetAnimation = () => {
         const middle = document.getElementById("middleItem");
         if (middle && animateState) {
-            
-            setTimeout(() => {
-                middle.style.backgroundColor = "white";
+            middle.style.backgroundColor = "white";
                 middle.style.transform = "translateY(0px)";
                 middle.style.margin = "6px";
                 setAnimateState(false);
-            }, 300);
         }
     };
 
