@@ -1,11 +1,7 @@
 import type { Node } from "./BSTCreation";
 import '../css/Tree.css';
 
-type TreeNode = {
-  key: string;
-  left: TreeNode | null;
-  right: TreeNode | null;
-};
+import type { TreeNode } from "./BSTCreation";
 
 const buildVisualTree = (nodes: Node[]): TreeNode | null => {
     const build = (index: number): TreeNode | null => {

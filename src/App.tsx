@@ -6,6 +6,7 @@ import BSTCreation, { buildBST } from './modules/BSTCreation';
 import { BSTVisual } from './modules/BSTVisual';
 import SortedArray from './modules/SortedArray';
 import ArraySplit from './modules/ArraySplit';
+import { BSTBalance } from './modules/BalancingBST';
 
 const removeDuplicates = (arr: string[]): string[] => [...new Set(arr)];
 
@@ -20,10 +21,17 @@ export function cleanupInput(arr: string[]): string[] {
 const App: React.FC = () => {
   const [inputs, setInputs] = useState<string[]>([]);
   const [table, setTable] = useState<Node[]>([]);
+  const [cleanBST, setCleanBST] = useState<Node[]>([]);
 
   useEffect(() => {
     const newTable = buildBSTFromInputs(inputs);
     setTable(newTable);
+
+    const indexInputs: [number, string][] = inputs.map((value, i) => [i, value]);
+    const newBST = BSTBalance(indexInputs);
+    if (newBST) {
+      setCleanBST(newBST[0]);
+    }
   }, [inputs]);
 
   const buildBSTFromInputs = (arr: string[]): Node[] => {
@@ -70,11 +78,11 @@ const App: React.FC = () => {
         <p>
           <span style={{ color: 'var(--main)' }}>5.</span> The algorithm then repeats for all items, splitting the tree equally
         </p>
-        <BSTCreation table={table} setTable={setTable} /* TODO: balance the BST and show result*/></BSTCreation>
+        <BSTCreation table={cleanBST} /* TODO: balance the BST and show result*/></BSTCreation>
         <p>
           For the visual tree:
         </p>
-        <BSTVisual nodes={table}></BSTVisual>
+        <BSTVisual nodes={cleanBST}></BSTVisual>
       </div>
       <footer>Like it? Check out my other projects at <a href="https://github.com/bev29rr" target="_blank">@bev29rr</a></footer>
     </>

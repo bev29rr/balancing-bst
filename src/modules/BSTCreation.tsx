@@ -7,7 +7,7 @@ export type Node = {
     right: number;
 }
 
-type TreeNode = {
+export type TreeNode = {
   key: string;
   left: TreeNode | null;
   right: TreeNode | null;
@@ -54,7 +54,7 @@ export function buildBST(strings: string[]): Node[] {
 
 type Props = {
     table: Node[];
-    setTable: React.Dispatch<React.SetStateAction<Node[]>>;
+    setTable?: React.Dispatch<React.SetStateAction<Node[]>>;
 };
 
 const BSTCreation: React.FC<Props> = ({ table }) => {
