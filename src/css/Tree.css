@@ -21,10 +21,36 @@
 }
 
 .children {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 40px;
+    margin-top: 20px;
+}
+
+/* Not my CSS from here */
+.child::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    width: 2px;
+    height: 20px;
+    background-color: white;
+    left: 50%;
+}
+
+.children::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 20px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    box-sizing: border-box;
 }
 
 .child {

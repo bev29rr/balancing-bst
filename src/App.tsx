@@ -45,6 +45,9 @@ const App: React.FC = () => {
           To see the visualised tree:
         </p>
         <BSTVisual nodes={table}></BSTVisual>
+        <p>
+          <span style={{ color: 'var(--main)' }}>3.</span> The next step is to prepare for the balancing
+        </p>
       </div>
     </>
   );
