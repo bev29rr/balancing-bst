@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import '../Array.css';
+import React from 'react';
+import '../css/Array.css';
 
 type Props = {
-  inputs: string[];
-  setInputs: React.Dispatch<React.SetStateAction<string[]>>;
+    inputs: string[];
+    setInputs: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const ArrayCreate: React.FC<Props> = ({ inputs, setInputs })  => {
@@ -34,7 +34,7 @@ const ArrayCreate: React.FC<Props> = ({ inputs, setInputs })  => {
                     key={index}
                     type="text"
                     className="array"
-                    placeholder={`Input ${index + 1}`}
+                    placeholder={`Item ${index + 1}`}
                     value={value}
                     onChange={(e) => handleChange(index, e.target.value)}
                     style={{

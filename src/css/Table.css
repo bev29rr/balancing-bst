@@ -1,0 +1,29 @@
+table {
+    padding: 10px;
+    border: var(--border-thickness) solid white;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+table thead th:nth-child(1),
+table tbody td:nth-child(1) {
+    width: 25%;
+}
+
+table thead th:nth-child(2),
+table tbody td:nth-child(2) {
+    width: 50%;
+    color: var(--main);
+}
+
+table thead th:nth-child(3),
+table tbody td:nth-child(3) {
+    width: 25%;
+}
+
+table th,
+table td {
+  border: var(--border-thickness) solid white;
+  padding: 12px;
+  text-align: center;
+}

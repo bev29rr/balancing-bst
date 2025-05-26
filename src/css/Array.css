@@ -7,7 +7,8 @@ button.delete {
 }
 
 .array-container {
-    border: 1px solid white;
+    border: var(--border-thickness) solid white;
+    border-radius: var(--border-radius);
     padding: 10px;
 }
 
