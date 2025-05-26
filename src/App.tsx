@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ArrayCreate from './modules/Array';
 
-import type { Node } from './modules/BST';
-import BSTCreation from './modules/BST';
+import type { Node } from './modules/BSTCreation';
+import BSTCreation, { buildBST } from './modules/BSTCreation';
+
+const removeDuplicates = (arr: string[]): string[] => [...new Set(arr)];
 
 const App: React.FC = () => {
   const [inputs, setInputs] = useState<string[]>([]);
@@ -14,14 +16,12 @@ const App: React.FC = () => {
   }, [inputs]);
 
   const buildBSTFromInputs = (arr: string[]): Node[] => {
-    return arr
-      .map((val, _) => val.trim())
-      .filter(val => val !== '')
-      .map((val, index) => ({
-        key: val,
-        left: index - 1,
-        right: index + 1,
-      })
+    return buildBST(
+      removeDuplicates(
+        arr
+          .map((val, _) => val.trim())
+          .filter(val => val !== '')
+      )
     );
   };
 
@@ -35,6 +35,9 @@ const App: React.FC = () => {
         <ArrayCreate inputs={inputs} setInputs={setInputs}></ArrayCreate>
         <p>
           <span style={{ color: 'var(--main)' }}>2.</span> Next, we need to convert this into a BST
+        </p>
+        <p className='sub'>
+          (Empty items and duplicates get removed)
         </p>
         <BSTCreation table={table} setTable={setTable}></BSTCreation>
       </div>

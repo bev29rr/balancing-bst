@@ -15,4 +15,7 @@ button.delete {
 input.array {
     width: 10%;
     padding: 3px;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    border: 1px solid #ccc;
 }
