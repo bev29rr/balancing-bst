@@ -12,7 +12,7 @@ const ArraySplit: React.FC<Props> = ({ inputs }) => {
     const AnimateMiddleItem = () => {
         const middle = document.getElementById("middleItem");
         if (middle && !animateState) {
-            middle.style.backgroundColor = "var(--main-red)";
+            middle.style.backgroundColor = "var(--main)";
             middle.style.transition = "transform 0.5s ease";
 
             setTimeout(() => {

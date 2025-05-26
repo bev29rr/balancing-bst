@@ -76,6 +76,7 @@ const App: React.FC = () => {
         </p>
         <BSTVisual nodes={table}></BSTVisual>
       </div>
+      <footer>Like it? Check out my other projects at <a href="https://github.com/bev29rr" target="_blank">@bev29rr</a></footer>
     </>
   );
 }
