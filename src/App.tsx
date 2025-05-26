@@ -3,6 +3,7 @@ import ArrayCreate from './modules/Array';
 
 import type { Node } from './modules/BSTCreation';
 import BSTCreation, { buildBST } from './modules/BSTCreation';
+import { BSTVisual } from './modules/BSTVisual';
 
 const removeDuplicates = (arr: string[]): string[] => [...new Set(arr)];
 
@@ -40,6 +41,10 @@ const App: React.FC = () => {
           (Empty items and duplicates get removed)
         </p>
         <BSTCreation table={table} setTable={setTable}></BSTCreation>
+        <p>
+          To see the visualised tree:
+        </p>
+        <BSTVisual nodes={table}></BSTVisual>
       </div>
     </>
   );
